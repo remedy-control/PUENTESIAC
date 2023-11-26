@@ -1,0 +1,209 @@
+<?xml version='1.0' encoding='UTF-8'?><wsdl:definitions xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:tns="http://folios.ws.telcel.mx.com/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:ns1="http://schemas.xmlsoap.org/soap/http" name="secureSiacWsService" targetNamespace="http://folios.ws.telcel.mx.com/">
+  <wsdl:types>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:tns="http://folios.ws.telcel.mx.com/" attributeFormDefault="unqualified" elementFormDefault="unqualified" targetNamespace="http://folios.ws.telcel.mx.com/">
+  <xs:element name="createFolio" type="tns:createFolio"/>
+  <xs:element name="createFolioCP" type="tns:createFolioCP"/>
+  <xs:element name="createFolioCPResponse" type="tns:createFolioCPResponse"/>
+  <xs:element name="createFolioGroups" type="tns:createFolioGroups"/>
+  <xs:element name="createFolioGroupsResponse" type="tns:createFolioGroupsResponse"/>
+  <xs:element name="createFolioResponse" type="tns:createFolioResponse"/>
+  <xs:element name="createFolioWS" type="tns:createFolioWS"/>
+  <xs:element name="createFolioWSResponse" type="tns:createFolioWSResponse"/>
+  <xs:complexType name="createFolioWS">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="tituloFolio" type="xs:string"/>
+      <xs:element minOccurs="0" name="comentarios" type="xs:string"/>
+      <xs:element minOccurs="0" name="usrSolicitante" type="xs:string"/>
+      <xs:element name="idGpoResp" type="xs:long"/>
+      <xs:element name="idActividad" type="xs:long"/>
+      <xs:element name="idEstatus" type="xs:int"/>
+      <xs:element minOccurs="0" name="folioSiac" type="xs:string"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="createFolioWSResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="return" type="tns:folio"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="folio">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="estatus" type="xs:string"/>
+      <xs:element minOccurs="0" name="fechaAlta" type="xs:dateTime"/>
+      <xs:element minOccurs="0" name="fechaModificacion" type="xs:dateTime"/>
+      <xs:element minOccurs="0" name="fechaPropuesta" type="xs:dateTime"/>
+      <xs:element name="folio" type="xs:long"/>
+      <xs:element minOccurs="0" name="ultimoComentario" type="xs:string"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="createFolioCP">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="trouble_ticket_id_ep" type="xs:string"/>
+      <xs:element minOccurs="0" name="title_ep" type="xs:string"/>
+      <xs:element name="status_ep" type="xs:int"/>
+      <xs:element minOccurs="0" name="re_region_ep" type="xs:string"/>
+      <xs:element minOccurs="0" name="postal_code_ep" type="xs:string"/>
+      <xs:element minOccurs="0" name="neighborhood_name" type="xs:string"/>
+      <xs:element minOccurs="0" name="create_time_ep" type="xs:string"/>
+      <xs:element minOccurs="0" name="submitter_ep" type="xs:string"/>
+      <xs:element minOccurs="0" name="support_group" type="xs:string"/>
+      <xs:element minOccurs="0" name="comments_ep" type="xs:string"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="createFolioCPResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="return" type="tns:folio"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="createFolioGroups">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="title_ep" type="xs:string"/>
+      <xs:element minOccurs="0" name="support_group" type="xs:string"/>
+      <xs:element minOccurs="0" name="comments_ep" type="xs:string"/>
+      <xs:element minOccurs="0" name="submitter_ep" type="xs:string"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="createFolioGroupsResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="return" type="tns:folio"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="createFolio">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="trouble_ticket_id_ep" type="xs:string"/>
+      <xs:element minOccurs="0" name="title_ep" type="xs:string"/>
+      <xs:element minOccurs="0" name="description_ep" type="xs:string"/>
+      <xs:element name="status_ep" type="xs:int"/>
+      <xs:element minOccurs="0" name="re_region_ep" type="xs:string"/>
+      <xs:element minOccurs="0" name="si_site_id_ep" type="xs:string"/>
+      <xs:element minOccurs="0" name="site_name" type="xs:string"/>
+      <xs:element minOccurs="0" name="create_time_ep" type="xs:string"/>
+      <xs:element minOccurs="0" name="submitter_ep" type="xs:string"/>
+      <xs:element minOccurs="0" name="support_group" type="xs:string"/>
+      <xs:element minOccurs="0" name="tipo_incidente" type="xs:int"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="createFolioResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="return" type="tns:folio"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Exception" type="tns:Exception"/>
+  <xs:complexType name="Exception">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="message" type="xs:string"/>
+    </xs:sequence>
+  </xs:complexType>
+</xs:schema>
+  </wsdl:types>
+  <wsdl:message name="createFolio">
+    <wsdl:part element="tns:createFolio" name="parameters">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="createFolioCP">
+    <wsdl:part element="tns:createFolioCP" name="parameters">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="createFolioWSResponse">
+    <wsdl:part element="tns:createFolioWSResponse" name="parameters">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="createFolioCPResponse">
+    <wsdl:part element="tns:createFolioCPResponse" name="parameters">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="createFolioResponse">
+    <wsdl:part element="tns:createFolioResponse" name="parameters">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="createFolioWS">
+    <wsdl:part element="tns:createFolioWS" name="parameters">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="Exception">
+    <wsdl:part element="tns:Exception" name="Exception">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="createFolioGroupsResponse">
+    <wsdl:part element="tns:createFolioGroupsResponse" name="parameters">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="createFolioGroups">
+    <wsdl:part element="tns:createFolioGroups" name="parameters">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:portType name="FoliosWServiceImpl">
+    <wsdl:operation name="createFolioWS">
+      <wsdl:input message="tns:createFolioWS" name="createFolioWS">
+    </wsdl:input>
+      <wsdl:output message="tns:createFolioWSResponse" name="createFolioWSResponse">
+    </wsdl:output>
+      <wsdl:fault message="tns:Exception" name="Exception">
+    </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="createFolioCP">
+      <wsdl:input message="tns:createFolioCP" name="createFolioCP">
+    </wsdl:input>
+      <wsdl:output message="tns:createFolioCPResponse" name="createFolioCPResponse">
+    </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="createFolioGroups">
+      <wsdl:input message="tns:createFolioGroups" name="createFolioGroups">
+    </wsdl:input>
+      <wsdl:output message="tns:createFolioGroupsResponse" name="createFolioGroupsResponse">
+    </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="createFolio">
+      <wsdl:input message="tns:createFolio" name="createFolio">
+    </wsdl:input>
+      <wsdl:output message="tns:createFolioResponse" name="createFolioResponse">
+    </wsdl:output>
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="secureSiacWsServiceSoapBinding" type="tns:FoliosWServiceImpl">
+    <soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+    <wsdl:operation name="createFolioWS">
+      <soap:operation soapAction="" style="document"/>
+      <wsdl:input name="createFolioWS">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="createFolioWSResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="Exception">
+        <soap:fault name="Exception" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="createFolioCP">
+      <soap:operation soapAction="" style="document"/>
+      <wsdl:input name="createFolioCP">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="createFolioCPResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="createFolioGroups">
+      <soap:operation soapAction="" style="document"/>
+      <wsdl:input name="createFolioGroups">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="createFolioGroupsResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="createFolio">
+      <soap:operation soapAction="" style="document"/>
+      <wsdl:input name="createFolio">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="createFolioResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="secureSiacWsService">
+    <wsdl:port binding="tns:secureSiacWsServiceSoapBinding" name="FoliosWServiceImplPort">
+      <soap:address location="http://10.119.167.212:8280/SiacGoldPlus/secureSiacWsService"/>
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

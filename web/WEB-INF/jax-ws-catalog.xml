@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<catalog xmlns="urn:oasis:names:tc:entity:xmlns:xml:catalog" prefer="system">
+    <system systemId="http://10.119.167.212:8280/SiacGoldPlus/secureSiacWsService?wsdl" uri="wsdl/10.119.167.212_8280/SiacGoldPlus/secureSiacWsService.wsdl"/>
+    <system systemId="http://10.119.155.73:8080/WS_SIACPUENTE/WS_SIAC_FOLIOS?wsdl" uri="wsdl/10.119.155.73_8080/WS_SIACPUENTE/WS_SIAC_FOLIOS.wsdl"/>
+    <system systemId="http://10.119.155.72:8080/WS_SIACPUENTE/WS_SIAC_FOLIOS?xsd=1" uri="wsdl/10.119.155.73_8080/WS_SIACPUENTE/WS_SIAC_FOLIOS.xsd_1.xsd"/>
+    <system systemId="http://10.119.167.209:8180/SiacGoldPlus/secureSiacWsService?wsdl" uri="wsdl/10.119.167.209_8180/SiacGoldPlus/secureSiacWsService.wsdl"/>
+</catalog>
